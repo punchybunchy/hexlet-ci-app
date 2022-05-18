@@ -1,0 +1,16 @@
+# file: .github/workflows/test-hexlet-ci-app.yml
+name: Test Hexlet CI
+on: [push]
+jobs:
+  Test-Launch-Of-Ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone out repository code
+        uses: actions/checkout@v2
+      - name: Run app setup
+        run: make setaup
+      - name: Run test
+        run: make test
+      - name: Run lint
+        run: make lint
+        
